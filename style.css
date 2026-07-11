@@ -8,15 +8,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
 
 :root{
-  --ink: #1C2B27;
-  --ink-soft: #3C4E48;
-  --paper: #EEEBDC;
-  --paper-raised: #F7F5EA;
-  --amber: #A8763E;
-  --amber-deep: #8A5E2C;
-  --sage: #4F7268;
-  --sage-pale: #DCE5DD;
-  --line: rgba(28,43,39,0.14);
+  --ink: #E9E7DE;
+  --ink-soft: #C3C7DC;
+  --paper: #4A6FE3;
+  --paper-raised: #5A7CE8;
+  --amber: #F4F1E6;
+  --amber-deep: #D9D4C2;
+  --sage: #8FA6F0;
+  --sage-pale: #6E8CEE;
+  --line: rgba(233,231,222,0.18);
 
   --display: 'Fraunces', serif;
   --body: 'Public Sans', system-ui, sans-serif;
@@ -62,7 +62,7 @@ ul{list-style:none;}
 /* ---------- Header ---------- */
 .site-header{
   position: sticky; top:0; z-index:50;
-  background: rgba(238,235,220,0.92);
+  background: rgba(74,111,227,0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
