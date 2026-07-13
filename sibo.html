@@ -83,5 +83,5 @@
 </div>
 </footer>
 
-</body>
+<script>(function(){function processLogo(img){var w=img.naturalWidth,h=img.naturalHeight;var c=document.createElement('canvas');c.width=w;c.height=h;var ctx=c.getContext('2d');ctx.drawImage(img,0,0);var data=ctx.getImageData(0,0,w,h);var d=data.data;var rr=70,gg=120,bb=235,tol=40;for(var i=0;i<d.length;i+=4){var dr=d[i]-rr,dg=d[i+1]-gg,db=d[i+2]-bb;if(Math.sqrt(dr*dr+dg*dg+db*db)<tol)d[i+3]=0;}ctx.putImageData(data,0,0);img.src=c.toDataURL('image/png');}function run(){var imgs=document.querySelectorAll('.logo-img');imgs.forEach(function(img){if(img.complete&&img.naturalWidth){processLogo(img);}else{img.addEventListener('load',function(){processLogo(img);});}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>
 </html>
