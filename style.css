@@ -281,6 +281,7 @@ footer .f-col a, footer .f-col p{ font-size:14.5px; margin-bottom:8px; display:b
   width: 160px;
   height: 160px;
   object-fit: cover;
+     object-position: center 15%;
   border-radius: 50%;
   border: 3px solid var(--amber-deep);
   margin: 0 0 20px 0;
