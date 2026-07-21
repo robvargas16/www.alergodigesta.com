@@ -274,3 +274,14 @@ footer .f-col a, footer .f-col p{ font-size:14.5px; margin-bottom:8px; display:b
 @media (max-width: 860px){
      .tab-buttons{ flex-direction:column; }
 }
+
+
+.team-photo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--amber-deep);
+  margin: 0 0 20px 0;
+}
