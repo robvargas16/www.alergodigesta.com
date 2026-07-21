@@ -136,13 +136,43 @@
 </section>
 
 <section class="section" id="quienes-somos">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Quiénes somos</p>
-      <h2>Conoce al equipo detrás de AlergoDigesta</h2>
-    </div>
-  </div>
-</section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Quiénes somos</p>
+          <h2>Conoce al equipo detrás de AlergoDigesta</h2>
+        </div>
+
+        <div class="team-tabs">
+          <div class="tab-buttons" role="tablist">
+            <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="gastro">Gastroenterología</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="alergo">Alergología</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="equipo">Equipo multidisciplinario</button>
+          </div>
+          <div class="tab-panels">
+            <div class="tab-panel active" id="tab-gastro" role="tabpanel">
+              <h3>Gastroenterología</h3>
+              <p>[Texto de ejemplo] Diagnóstico y tratamiento de enfermedades digestivas basado en evidencia clínica.</p>
+              <div class="upload-box">
+                <label for="gastro-doc">Subir documento (Word)</label>
+                <form id="gastro-upload-form">
+                  <input type="file" id="gastro-doc" name="gastro-doc" accept=".doc,.docx">
+                  <br>
+                  <button type="submit" class="btn btn-ghost">Subir documento</button>
+                </form>
+              </div>
+            </div>
+            <div class="tab-panel" id="tab-alergo" role="tabpanel">
+              <h3>Alergología</h3>
+              <p>[Texto de ejemplo] Evaluación y manejo de alergias alimentarias y respiratorias.</p>
+            </div>
+            <div class="tab-panel" id="tab-equipo" role="tabpanel">
+              <h3>Equipo multidisciplinario</h3>
+              <p>[Texto de ejemplo] Un equipo integrado de especialistas que trabaja en conjunto para un diagnóstico integral.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 <section class="section" style="padding-top:0">
 <div class="wrap">
@@ -222,4 +252,20 @@
 </div>
 
 <script>(function(){function processLogo(img){var w=img.naturalWidth,h=img.naturalHeight;var c=document.createElement('canvas');c.width=w;c.height=h;var ctx=c.getContext('2d');ctx.drawImage(img,0,0);var data=ctx.getImageData(0,0,w,h);var d=data.data;var rr=70,gg=120,bb=235,tol=40;for(var i=0;i<d.length;i+=4){var dr=d[i]-rr,dg=d[i+1]-gg,db=d[i+2]-bb;if(Math.sqrt(dr*dr+dg*dg+db*db)<tol)d[i+3]=0;}ctx.putImageData(data,0,0);img.src=c.toDataURL('image/png');}function run(){var imgs=document.querySelectorAll('.logo-img');imgs.forEach(function(img){if(img.complete&&img.naturalWidth){processLogo(img);}else{img.addEventListener('load',function(){processLogo(img);});}});}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}else{run();}})();</script>
+<script>
+(function(){
+  var btns = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.tab-panel');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      var target = document.getElementById('tab-' + btn.getAttribute('data-tab'));
+      if(target){ target.classList.add('active'); }
+    });
+  });
+})();
+</script>
 </html>
