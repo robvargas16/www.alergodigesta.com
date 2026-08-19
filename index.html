@@ -12,7 +12,7 @@
 <header class="site-header">
 <div class="wrap">
 <a href="index.html" class="logo"><img src="img/logo.png" alt="AlergoDigesta" class="logo-img"></a>
-<nav class="nav-links">
+<nav class="nav-links" id="navLinks">
 <a href="index.html#servicios">Servicios</a>
 <a href="index.html#enfoque">Nuestro enfoque</a>
   <a href="index.html#quienes-somos">Quiénes somos</a>
@@ -22,6 +22,9 @@
 <div class="nav-cta">
 <a href="https://wa.me/593995368196" onclick="return gtag_report_conversion('https://wa.me/593995368196');" class="btn btn-primary">Agendar por WhatsApp</a>
 </div>
+<button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+<span></span><span></span><span></span>
+</button>
 </div>
 </header>
 
@@ -268,4 +271,24 @@
   });
 })();
 </script>
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  if(!toggle || !links) return;
+  toggle.addEventListener('click', function(){
+    var isOpen = links.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
 </html>
