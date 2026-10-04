@@ -68,7 +68,7 @@ ul{list-style:none;}
 }
 .site-header .wrap{
   display:flex; align-items:center; justify-content:space-between;
-  padding-top:18px; padding-bottom:18px;
+  padding-top:10px; padding-bottom:10px;
 }
 .logo{
   font-family: var(--display);
@@ -76,7 +76,8 @@ ul{list-style:none;}
   letter-spacing: -0.01em;
 }
 .logo span{color:var(--amber);}
-.logo-img{ height:200px; width:auto; display:block; }
+/* el PNG del logo trae mucho margen: se agranda y se recorta con márgenes negativos */
+.logo-img{ height:124px; width:auto; display:block; margin:-32px 0 -32px -38px; }
 .nav-links{display:flex; gap:32px; font-size:15px; font-weight:500;}
 .nav-links a{position:relative; padding-bottom:4px;}
 .nav-links a::after{
@@ -292,7 +293,7 @@ footer .f-col a, footer .f-col p{ font-size:14.5px; margin-bottom:8px; display:b
   #ubicacion > .wrap > div[style]{ gap:20px !important; }
 
   .site-header .wrap{ padding-top:14px; padding-bottom:14px; }
-  .logo-img{ height:44px; }
+  .logo-img{ height:96px; margin:-25px 0 -25px -30px; }
 
   .nav-links{
     display:flex;

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /alergodigestamobile.html
+
+Sitemap: https://www.alergodigesta.com/sitemap.xml
