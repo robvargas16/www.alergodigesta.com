@@ -76,8 +76,7 @@ ul{list-style:none;}
   letter-spacing: -0.01em;
 }
 .logo span{color:var(--amber);}
-/* el PNG del logo trae mucho margen: se agranda y se recorta con márgenes negativos */
-.logo-img{ height:124px; width:auto; display:block; margin:-32px 0 -32px -38px; }
+.logo-img{ height:60px; width:auto; display:block; }
 .nav-links{display:flex; gap:32px; font-size:15px; font-weight:500;}
 .nav-links a{position:relative; padding-bottom:4px;}
 .nav-links a::after{
@@ -293,7 +292,7 @@ footer .f-col a, footer .f-col p{ font-size:14.5px; margin-bottom:8px; display:b
   #ubicacion > .wrap > div[style]{ gap:20px !important; }
 
   .site-header .wrap{ padding-top:14px; padding-bottom:14px; }
-  .logo-img{ height:96px; margin:-25px 0 -25px -30px; }
+  .logo-img{ height:46px; }
 
   .nav-links{
     display:flex;
@@ -363,3 +362,38 @@ footer .f-col a, footer .f-col p{ font-size:14.5px; margin-bottom:8px; display:b
   border: 3px solid var(--amber-deep);
   margin: 0 0 20px 0;
 }
+
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.wa-float{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  width:58px; height:58px; border-radius:50%;
+  background:#25D366; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:transform .2s ease;
+}
+.wa-float:hover{ transform:scale(1.07); }
+@media (max-width:860px){ .wa-float{ right:16px; bottom:16px; width:54px; height:54px; } }
+
+/* ---------- Dirección médica (portada) ---------- */
+.doctor-intro{ padding:36px 0; border-bottom:1px solid var(--line); }
+.doctor-intro .wrap{ display:flex; align-items:center; gap:24px; }
+.doctor-intro-photo{ width:96px; height:96px; border-radius:50%; object-fit:cover; object-position:center 15%; border:3px solid var(--amber-deep); flex-shrink:0; }
+.doctor-intro .eyebrow{ margin-bottom:8px; }
+.doctor-intro-text{ color:var(--ink); max-width:70ch; font-size:16px; }
+.doctor-intro-link{ display:inline-block; margin-top:8px; font-size:14px; font-weight:600; border-bottom:1px solid var(--ink); }
+@media (max-width:860px){ .doctor-intro .wrap{ flex-direction:column; align-items:flex-start; gap:14px; } }
+
+/* ---------- Preguntas frecuentes ---------- */
+.faq{ border-bottom:1px solid var(--line); padding:18px 0; }
+.faq summary{ font-family:var(--display); font-size:20px; cursor:pointer; list-style:none; position:relative; padding-right:32px; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:'+'; position:absolute; right:0; top:0; font-family:var(--body); font-size:24px; line-height:1; color:var(--amber-deep); }
+.faq[open] summary::after{ content:'−'; }
+.faq p{ margin:12px 0 0; }
+.prose a{ border-bottom:1px solid var(--ink-soft); }
+
+/* ---------- Pie de página: 4 columnas ---------- */
+footer .wrap{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1.2fr; gap:32px; }
+@media (max-width:860px){ footer .wrap{ grid-template-columns:1fr 1fr; gap:28px; } }
+@media (max-width:480px){ footer .wrap{ grid-template-columns:1fr; } }

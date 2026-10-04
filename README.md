@@ -1,27 +1,25 @@
-# AlergoDigest — Sitio web
+# AlergoDigesta — Sitio web
+
+Sitio estático (HTML + CSS) publicado en Vercel: https://www.alergodigesta.com
 
 ## Estructura
+
 - `index.html` — página de inicio
-- `servicios/` — páginas de cada servicio (usa `sibo.html` como plantilla para las 5 restantes: panel-igg-ige, microbiota, reto-oral, inmunoterapia, consulta)
-- `blog/` — listado (`index.html`) + artículos individuales
-- `css/style.css` — sistema de diseño completo (colores, tipografía, componentes)
+- Páginas de servicio: `consulta.html`, `sibo.html`, `prick-test.html`, `reto-oral.html`, `inmunoterapia.html`, `alergia-pediatrica.html`, `feno.html`, `endoscopia.html`, `ecoendoscopia.html`
+- Blog: `blog.html` (listado) + un archivo `.html` por artículo
+- `preguntas-frecuentes.html`, `privacidad.html`
+- `style.css` — sistema de diseño (colores, tipografía, componentes)
+- `img/` — logo (`logo-header.png`, transparente), íconos (`favicon-32.png`, `apple-touch-icon.png`, `icon-512.png`), imagen para redes (`og-image.jpg`) y fotos del equipo
+- `sitemap.xml`, `robots.txt` — para Google
 
-## Pendientes antes de publicar
-1. Reemplazar `593000000000` por tu número real de WhatsApp Business en todos los archivos (buscar "wa.me")
-2. Crear las 5 páginas de servicio restantes copiando `servicios/sibo.html` y cambiando el contenido
-3. Agregar fotos reales del consultorio/equipo en `img/`
-4. Escribir los 2 artículos de blog restantes (mismo patrón que `blog/hinchazon-despues-de-comer.html`)
+## Agregar una página nueva
 
-## Cómo publicarlo (con tu dominio ya comprado)
+1. Copiar una página de servicio existente (por ejemplo `reto-oral.html`).
+2. Cambiar `<title>`, `<meta name="description">`, las etiquetas `og:` y `canonical`, y el contenido entre `</header>` y `<footer>`.
+3. Agregarla al pie de página de todas las páginas si corresponde y a `sitemap.xml`.
 
-### Opción recomendada: Vercel o Netlify (gratis)
-1. Sube esta carpeta a un repositorio de GitHub
-2. Entra a vercel.com (o netlify.com), conecta tu cuenta de GitHub, selecciona el repo
-3. Deploy automático — te da una URL tipo `alergodigest.vercel.app`
-4. En el dashboard del proyecto, ve a "Domains" / "Dominios" y agrega tu dominio propio
-5. Te van a mostrar registros DNS (normalmente un registro `A` apuntando a una IP, o un `CNAME`)
-6. Entra al panel de tu proveedor de dominio (donde lo compraste) y agrega esos registros en la sección DNS
-7. Espera la propagación (minutos a 48h) — Vercel/Netlify activan HTTPS automáticamente
+## Publicar
 
-### Alternativa sin GitHub
-Netlify también permite arrastrar y soltar la carpeta directamente en netlify.com/drop para un deploy instantáneo, y luego conectar el dominio igual.
+Cada commit a `main` se publica automáticamente en Vercel.
+
+WhatsApp de contacto: +593 99 536 8196. Los enlaces usan `?text=` con un mensaje prellenado y llaman a `gtag_report_conversion` (conversión de Google Ads).
